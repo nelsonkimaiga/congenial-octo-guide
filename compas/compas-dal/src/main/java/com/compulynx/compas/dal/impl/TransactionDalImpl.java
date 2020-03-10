@@ -1059,8 +1059,8 @@ public class TransactionDalImpl implements TransactionDal {
 			connection = dataSource.getConnection();
 			if (rpt.fromDate == null && rpt.toDate == null) {
 				preparedStatement = connection.prepareStatement(Queryconstants.getAllTransactions);
-				preparedStatement.setInt(1, rpt.orgId);
-				preparedStatement.setInt(2, rpt.orgId);
+//				preparedStatement.setInt(1, rpt.orgId);
+//				preparedStatement.setInt(2, rpt.orgId);
 			}
 			if (rpt.fromDate != null && rpt.toDate != null) {
 				preparedStatement = connection.prepareStatement(Queryconstants.getAllTransactionsBetween);
@@ -1094,18 +1094,18 @@ public class TransactionDalImpl implements TransactionDal {
 				// report.toDate = resultSet.getString("");
 				report.memberNo = resultSet.getString("member_no");
 				// report.totalAmount = resultSet.getString("");
-				report.billNo = resultSet.getString("bill_no");
+				//report.billNo = resultSet.getString("bill_no");
 				report.txnDate = resultSet.getString("trans_date");
-				report.serviceName = resultSet.getString("ser_name");
-				report.status = resultSet.getString("trans_status");
-				report.cardNo = resultSet.getString("card_no");
-				report.accNo = resultSet.getString("acc_no");
-				report.name = resultSet.getString("NAME");
-				report.serviceAmount = resultSet.getDouble("service_amount");
-				report.productName = resultSet.getString("product_name");
-				report.merchantName = resultSet.getString("mer_name");
-				report.productId = resultSet.getInt("productId");
-				report.merchantId = resultSet.getInt("merchantId");
+				report.serviceName = resultSet.getString("service_name");
+			//	report.status = resultSet.getString("trans_status");
+			//	report.cardNo = resultSet.getString("card_no");
+			//	report.accNo = resultSet.getString("acc_no");
+				report.name = resultSet.getString("member_name");
+				report.serviceAmount = resultSet.getDouble("amount");
+				report.productName = resultSet.getString("scheme_name");
+				report.merchantName = resultSet.getString("provider_name");
+			//	report.productId = resultSet.getInt("productId");
+			//	report.merchantId = resultSet.getInt("merchantId");
 				report.invoiceNo = resultSet.getString("invoice_number");
 				reports.add(report);
 				counter++;

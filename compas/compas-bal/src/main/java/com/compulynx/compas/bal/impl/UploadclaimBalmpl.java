@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.compulynx.compas.bal.UploadclaimBal;
 import com.compulynx.compas.dal.UploadclaimDal;
 import com.compulynx.compas.models.Claim;
-import com.compulynx.compas.models.CompasResponse;;
+import com.compulynx.compas.models.CompasResponse;
 
 @Component
 public class UploadclaimBalmpl implements UploadclaimBal {
@@ -61,5 +61,44 @@ public class UploadclaimBalmpl implements UploadclaimBal {
 	 public CompasResponse UploadService(String filePath) {
 		return uploadclaimDal.UploadClaim(filePath);
     }
+
+	@Override
+	public boolean addUploadOffLCTDocument(String orgId, MultipartFile file) {
+		// TODO Auto-generated method stub
+		return false;
+		/*
+        try 
+        {
+        	UploadclaimDocument doc = new UploadclaimDocument();
+            doc.docName = file.getOriginalFilename();
+			doc.file = file.getBytes();
+			doc.orgId = orgId;
+	        uploadclaimDal.addUploadclaimDocument(doc);
+	        saveUploadedFile(file);
+	        return true;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		*/
+	}
+
+	@Override
+	public CompasResponse UploadOFFLCTService(String filePath) {
+		// TODO Auto-generated method stub
+		return uploadclaimDal.UploadOFFLCTClaim(filePath);
+	}
+
+	@Override
+	public boolean addUploadSmartClaim(String orgId, MultipartFile file) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public CompasResponse UploadSmartClaimService(String filePath) {
+		// TODO Auto-generated method stub
+		return uploadclaimDal.UploadSmartClaim(filePath);
+	}
 
 }

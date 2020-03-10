@@ -1,8 +1,6 @@
 package com.compulynx.compas.models;
 
-import java.util.List;
-
-public class Claim {
+public class OffLCT {
 	    public Long id;
 	    public String insuranceCode;
 	    public String insuranceName;
@@ -41,9 +39,6 @@ public class Claim {
 		public int serviceId;
 		public double diff;
 		public String accNo;
-		public List<ClaimDtl> claimtransactionDetails;
-		public List<Transaction> selectedTrans;
-		public List<ClaimRemitance> claimdetails;
 		public int createdBy;
 		public double amount;
 		public String providerCode;
@@ -56,13 +51,12 @@ public class Claim {
 		public String voucherName;
 		public String serviceName;
 		public String deviceId;
-		public List<TransactionDtl> transDtl;
 		public String transStatus;
 		public int userId;
 		public double totalRunningBalance;
 		@Override
 		public String toString() {
-			return "Claim [id=" + id + ", insuranceCode=" + insuranceCode + ", insuranceName=" + insuranceName
+			return "OffLCT [id=" + id + ", insuranceCode=" + insuranceCode + ", insuranceName=" + insuranceName
 					+ ", schemeCode=" + schemeCode + ", schemeName=" + schemeName + ", chargeDate=" + chargeDate
 					+ ", receiptNo=" + receiptNo + ", patientNo=" + patientNo + ", patientName=" + patientName
 					+ ", membershipNo=" + membershipNo + ", itemCode=" + itemCode + ", itemName=" + itemName
@@ -73,15 +67,13 @@ public class Claim {
 					+ ", paidStatus=" + paidStatus + ", orgId=" + orgId + ", BillNo=" + BillNo + ", fromDt=" + fromDt
 					+ ", toDt=" + toDt + ", count=" + count + ", allowed=" + allowed + ", isActive=" + isActive
 					+ ", reject=" + reject + ", reason=" + reason + ", voucherId=" + voucherId + ", programmeId="
-					+ programmeId + ", serviceId=" + serviceId + ", diff=" + diff + ", accNo=" + accNo
-					+ ", claimtransactionDetails=" + claimtransactionDetails + ", selectedTrans=" + selectedTrans
-					+ ", claimdetails=" + claimdetails + ", createdBy=" + createdBy + ", amount=" + amount
-					+ ", providerCode=" + providerCode + ", providerName=" + providerName + ", bankCode=" + bankCode
-					+ ", bankName=" + bankName + ", txnIds=" + txnIds + ", transferDate=" + transferDate + ", basketId="
-					+ basketId + ", voucherName=" + voucherName + ", serviceName=" + serviceName + ", deviceId="
-					+ deviceId + ", transDtl=" + transDtl + "]";
+					+ programmeId + ", serviceId=" + serviceId + ", diff=" + diff + ", accNo=" + accNo + ", createdBy="
+					+ createdBy + ", amount=" + amount + ", providerCode=" + providerCode + ", providerName="
+					+ providerName + ", bankCode=" + bankCode + ", bankName=" + bankName + ", txnIds=" + txnIds
+					+ ", transferDate=" + transferDate + ", basketId=" + basketId + ", voucherName=" + voucherName
+					+ ", serviceName=" + serviceName + ", deviceId=" + deviceId + ", transStatus=" + transStatus
+					+ ", userId=" + userId + ", totalRunningBalance=" + totalRunningBalance + "]";
 		}
-		
-		
+
 		
 }

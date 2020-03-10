@@ -2,16 +2,16 @@
 //const $q = $injector.get('$q');
 //console.log('$q: ', $q);
 'use strict';
-angular.module('app.uploadsmartclaim', []).controller('uploadsmartclaimCtrl', //['$scope', '$filter', 'uploadclaimSvc','organizationSvc', '$rootScope', 
+angular.module('app.uploadofflct', []).controller('uploadoffLCTCtrl', //['$scope', '$filter', 'uploadclaimSvc','organizationSvc', '$rootScope', 
 	//'blockUI', 'logger', '$location','$http',
 	//function ($scope, $filter, uploadclaimSvc,organizationSvc, $rootScope, blockUI, logger, $location,$http) 
-		["$scope", "$filter", "uploadclaimAppsvc",  "$rootScope", "blockUI", "logger", "$location", "localStorageService", function ($scope, $filter, uploadclaimAppsvc, $rootScope, blockUI, logger, $location, localStorageService){
+		["$scope", "$filter", "uploadOffLCTclaimAppsvc",  "$rootScope", "blockUI", "logger", "$location", "localStorageService", function ($scope, $filter, uploadOffLCTclaimAppsvc, $rootScope, blockUI, logger, $location, localStorageService){
 	console.log('upload controller okay...');
 	//console.log('dealing with user ', localStorageService.get('user'));
 	$scope.uploadClaim = function()
 	{
 		console.log('uploading: ', $scope.myFile);
-		uploadclaimAppsvc.saveFile($scope.myFile, $scope.orgId).success(function (response) {
+		uploadOffLCTclaimAppsvc.saveFile($scope.myFile, $scope.orgId).success(function (response) {
 		      if (response.respCode == 200) {
 	                logger.logSuccess("Great! The File Information Uploaded successfully")
 
@@ -26,15 +26,15 @@ angular.module('app.uploadsmartclaim', []).controller('uploadsmartclaimCtrl', //
 		  });
     };
     
-} ]).factory('uploadclaimAppsvc', function ($http) {
+} ]).factory('uploadOffLCTclaimAppsvc', function ($http) {
      var uploadSvc={};    
    uploadSvc.saveFile = function (file,orgId) {
-			console.log("uploadinf file...");
+			console.log("uploading off LCT file");
 		    var fd = new FormData();
 		    fd.append('file', file);
 		    fd.append('orgId',orgId);
 		    return $http({
-		        url: '/compas/rest/transaction/uploadsmartclaim',
+		        url: '/compas/rest/transaction/uploadOffLCT',
 		        method: 'POST',
 		        transformRequest: angular.identity,
 		        headers: { 'Content-Type': undefined },

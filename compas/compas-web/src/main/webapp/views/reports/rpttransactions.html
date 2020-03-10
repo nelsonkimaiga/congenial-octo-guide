@@ -197,7 +197,7 @@
 									data-ng-class="{active: row == '-txnDate'}"></span>
 							</div>
 						</th>
-						<th>
+						<th ng-hide="true">
 							<div class="th">
 								Bill No<span class="glyphicon glyphicon-chevron-up"
 									data-ng-click=" order('billNo') "
@@ -286,7 +286,7 @@
 						<td>{{txn.name}}</td>
 						<td>{{txn.memberNo}}</td>
 						<td>{{txn.txnDate}}</td>
-						<td>{{txn.billNo}}</td>
+						<td ng-hide="true">{{txn.billNo}}</td>
 						<td>{{txn.invoiceNo}}</td>
 						<td>{{txn.productName}}</td>
 						<td>{{txn.merchantName}}</td>

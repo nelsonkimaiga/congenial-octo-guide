@@ -104,6 +104,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>6.0.6</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/eclipse/jdtcore -->
+		<dependency>
+		    <groupId>eclipse</groupId>
+		    <artifactId>jdtcore</artifactId>
+		    <version>3.1.0</version>
+		</dependency>
+		
 
 	</dependencies>
 	<build>

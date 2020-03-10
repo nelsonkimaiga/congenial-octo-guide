@@ -218,9 +218,10 @@
 						   "app.rptAuditTrail",
 						   "app.uhmcrptTransaction",
 						   "app.rptUtilization",
-						   "app.uploadsmartclaim",
 						   "app.rptjdcprovidertrans",
-						   "app.rptMembers"
+						   "app.rptMembers",
+						   "app.uploadofflct",
+						   "app.smartdebit"
                            ]
     ).config(["$routeProvider", function ($routeProvider) {
         return $routeProvider.when("/", {
@@ -362,9 +363,13 @@
             templateUrl: "views/transaction/uploadclaim.html",
             controller: "uploadclaimCtrl"
         })
-		.when("/transaction/uploadsmartclaim", {
-	            templateUrl: "views/transaction/uploadclaim.html",
-	            controller: "uploadsmartclaimCtrl"
+		.when("/transaction/uploadofflct", {
+	            templateUrl: "views/transaction/uploadofflct.html",
+	            controller: "uploadoffLCTCtrl"
+	    })
+		.when("/transaction/smartdebit", {
+	         templateUrl: "views/transaction/smartdebit.html",
+	         controller: "smartDebitCtrl"
 	    })
         .when("/masters/uploadservice", {
             templateUrl: "views/masters/uploadservice.html",

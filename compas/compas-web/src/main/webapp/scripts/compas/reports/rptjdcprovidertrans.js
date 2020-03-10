@@ -2,7 +2,7 @@
  * Transaction Held Angular Module
  */
 'use strict';
-angular.module('app.rptjdcprovidertrans', []).controller("rptJDCProviderTransCtrl", ["$scope", "$filter", "rptProviderTransSvc","organizationSvc","merchantSvc", "$rptProviderTransValid", "$rootScope", "blockUI", "logger", "$location","$http","$window", function ($scope, $filter, rptProviderTransSvc,organizationSvc,merchantSvc, $rptProviderTransValid, $rootScope, blockUI, logger, $location,$http,$window) {
+angular.module('app.rptjdcprovidertrans', []).controller("rptJDCProviderTransCtrl", ["$scope", "$filter", "rptjdcProviderTransSvc","organizationSvc","merchantSvc", "$rptProviderTransValid", "$rootScope", "blockUI", "logger", "$location","$http","$window", function ($scope, $filter, rptjdcProviderTransSvc,organizationSvc,merchantSvc, $rptProviderTransValid, $rootScope, blockUI, logger, $location,$http,$window) {
     $scope.transProviderList = [];
     $scope.mem=[];
     $scope.showFilters=true;
@@ -189,7 +189,7 @@ $scope.loadTransactions=function(){
 
   
 
-}]).factory('rptProviderTransSvc', function ($http) {
+}]).factory('rptjdcProviderTransSvc', function ($http) {
     var shpProviderTrans = {};
     shpProviderTrans.GetJDCProviderWiseTxnsDetails = function (gate) {
         return $http({
